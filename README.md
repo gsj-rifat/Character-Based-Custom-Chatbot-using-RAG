@@ -49,7 +49,7 @@ These are combined into a single `text` column used for embeddings and retrieval
 
 ---
 
-📚 Acknowledgments
+## 📚 Acknowledgments
 OpenAI
 Vocareum API environment
 Udacity AI Chatbot Course (template inspiration)
