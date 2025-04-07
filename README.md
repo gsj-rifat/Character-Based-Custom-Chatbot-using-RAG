@@ -50,8 +50,8 @@ These are combined into a single `text` column used for embeddings and retrieval
 ---
 
 ## 📚 Acknowledgments
-OpenAI
-Vocareum API environment
-Udacity AI Chatbot Course (template inspiration)
+  - OpenAI
+  - Vocareum API environment
+  - Udacity AI Chatbot Course (template inspiration)
 
 
