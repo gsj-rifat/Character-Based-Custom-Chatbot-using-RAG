@@ -48,6 +48,38 @@ These are combined into a single `text` column used for embeddings and retrieval
    - Observe hallucinations in generic queries versus grounded, contextual replies.
 
 ---
+## New Extension: Open-Source, Free, Hugging Face Version app.py
+
+I have extended and improved this project to **remove OpenAI dependency** and make it fully deployable using **only free models and APIs**!
+
+| Feature | Status |
+|:---|:---|
+| Embedding Model | Local Sentence-Transformer (`all-MiniLM-L6-v2`) |
+| Text Generation Model | Hugging Face Inference API (`google/flan-t5-small`) |
+| Deployment | Gradio App |
+| API Token Management | `.env` / `token.env` file |
+| Hosting | Hugging Face Spaces (or local) |
+
+## Key Changes from Previous Project
+
+- **OpenAI API is no longer used.**  
+  Instead, a **small, free model (`flan-t5-small`) from Hugging Face** is used via the Hugging Face Inference API.
+  
+- **Online generation**: 
+  - The RAG pipeline creates a custom prompt with retrieved contexts.
+  - The prompt is sent to Hugging Face servers for real-time text generation.
+  
+- **Secure Token Management**: 
+  - Hugging Face API token is stored securely in a `token.env` file.
+  - The app loads the token using `python-dotenv`.
+
+- **Frontend**:
+  - The chatbot is deployed using **Gradio**, providing a clean, interactive web interface.
+  
+- **Deployment Ready**:
+  - Easily deployable on Hugging Face Spaces without needing heavy compute.
+
+---
 
 ## 📚 Acknowledgments
   - OpenAI
