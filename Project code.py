@@ -14,10 +14,10 @@
 import pandas as pd
 import tiktoken
 import numpy as np
-from openai.embeddings_utils import get_embedding, distances_from_embeddings
+from embeddings_utils import get_embedding, distances_from_embeddings
 
 
-df = pd.read_csv("data/character_descriptions.csv", index_col=False)
+df = pd.read_csv("character_descriptions.csv", index_col=False)
 df.head(5)
 
 
@@ -41,7 +41,7 @@ openai.api_base = "https://openai.vocareum.com/v1"
 
 # For security reason, I omited the API KEY after completing the project.
 
-openai.api_key = "YOUR API KEY" 
+openai.api_key = ""
 
 
 EMBEDDING_MODEL_NAME = "text-embedding-ada-002"
@@ -76,7 +76,7 @@ def get_cosine_distance(question, df):
     """
 
     # Get the embedding for question text
-    question_embeddings = get_embedding(question, engine=EMBEDDING_MODEL_NAME)
+    question_embeddings = get_embedding(question, model=EMBEDDING_MODEL_NAME)
 
     # Copy the current dataframe. Create distances column
     df_copy = df.copy()
@@ -207,7 +207,7 @@ answer2_customized = openai.Completion.create(
   prompt=prompt_and_context(question_2, df, 2000),
     max_tokens=150
 )
-answer2_customized["choices"][0]["text"]
+print(answer2_customized["choices"][0]["text"])
 
 
 
