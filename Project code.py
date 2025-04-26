@@ -41,7 +41,7 @@ openai.api_base = "https://openai.vocareum.com/v1"
 
 # For security reason, I omited the API KEY after completing the project.
 
-openai.api_key = ""
+openai.api_key = "api key"
 
 
 EMBEDDING_MODEL_NAME = "text-embedding-ada-002"
